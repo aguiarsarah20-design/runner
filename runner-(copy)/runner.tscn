@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://tb5nilo2mfu4"]
+
+[ext_resource type="Texture2D" uid="uid://bmrsorb5i8wki" path="res://Assets Godot Runner/background.png" id="2_hfbw2"]
+[ext_resource type="FontFile" uid="uid://ban4wp6x1bdev" path="res://Assets Godot Runner/PressStart2P-Regular.ttf" id="3_44hxy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vk5uk"]
+texture = ExtResource("2_hfbw2")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6v1ry"]
+bg_color = Color(1, 0.6, 0.60784316, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iwbjd"]
+bg_color = Color(1, 0.6, 0.60666656, 1)
+
+[node name="Menu" type="Control" unique_id=33732002]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Fundo" type="Panel" parent="." unique_id=1700307831]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1146.0
+offset_bottom = 613.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_vk5uk")
+
+[node name="Titulo" type="Label" parent="." unique_id=2837980]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 4.037
+anchor_bottom = 2.0
+offset_left = 273.0
+offset_top = 66.0
+offset_right = 831.52
+offset_bottom = 146.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.87058824, 0, 0.4392157, 1)
+theme_override_colors/font_shadow_color = Color(0.09352771, 0, 0.0058055613, 1)
+theme_override_fonts/font = ExtResource("3_44hxy")
+theme_override_font_sizes/font_size = 120
+text = "Runner"
+
+[node name="Botões" type="VBoxContainer" parent="." unique_id=2134615972]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 17
+
+[node name="Jogar" type="Button" parent="Botões" unique_id=347226352]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.53333336, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_44hxy")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_6v1ry")
+text = "Jogar"
+
+[node name="Sair" type="Button" parent="Botões" unique_id=303861040]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.42, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_44hxy")
+theme_override_font_sizes/font_size = 51
+theme_override_styles/normal = SubResource("StyleBoxFlat_iwbjd")
+text = "Sair"
+
+[connection signal="pressed" from="Botões/Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="Botões/Sair" to="." method="_on_sair_pressed"]

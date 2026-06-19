@@ -1,0 +1,164 @@
+[gd_scene format=3 uid="uid://c30q2pg4uaasw"]
+
+[ext_resource type="Script" uid="uid://djw3exu0d5dwk" path="res://node_2d.gd" id="1_yq54j"]
+[ext_resource type="Texture2D" uid="uid://bmrsorb5i8wki" path="res://Assets Godot Runner/background.png" id="2_1ap6j"]
+[ext_resource type="Texture2D" uid="uid://blb2pq5xdr2ga" path="res://Assets Godot Runner/middleground2.png" id="3_8c340"]
+[ext_resource type="Texture2D" uid="uid://bcnyxsvgxrn8f" path="res://Assets Godot Runner/foreground.png" id="3_qn35j"]
+[ext_resource type="Texture2D" uid="uid://bg4w3oiphpyhq" path="res://Assets Godot Runner/middleground1.png" id="4_45nkh"]
+[ext_resource type="Script" uid="uid://bh12ntmbrjeyv" path="res://personagem.gd" id="6_45nkh"]
+[ext_resource type="Texture2D" uid="uid://bjpcr3727y8kf" path="res://Assets Godot Runner/player.png" id="7_ysdx3"]
+[ext_resource type="Script" uid="uid://nyb1xncbm62a" path="res://gerador_obstaculos.gd" id="8_ysdx3"]
+[ext_resource type="Script" uid="uid://htw2gv1d1dqv" path="res://gerador_item.gd" id="9_t8pok"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45nkh"]
+size = Vector2(1203, 69.125)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_45nkh"]
+radius = 90.0
+height = 180.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8pok"]
+atlas = ExtResource("7_ysdx3")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtw28"]
+atlas = ExtResource("7_ysdx3")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orj5g"]
+atlas = ExtResource("7_ysdx3")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01kpq"]
+atlas = ExtResource("7_ysdx3")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ka1p"]
+atlas = ExtResource("7_ysdx3")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rhuj"]
+atlas = ExtResource("7_ysdx3")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_msvki"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8pok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtw28")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orj5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01kpq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ka1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rhuj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=692245735]
+script = ExtResource("1_yq54j")
+
+[node name="Fundo" type="Sprite2D" parent="." unique_id=2082225895]
+position = Vector2(-18.999998, -4155.9995)
+scale = Vector2(2.265625, 3.6111112)
+texture = ExtResource("2_1ap6j")
+centered = false
+offset = Vector2(0, 1152)
+
+[node name="Fundo2" type="Sprite2D" parent="." unique_id=587684582]
+position = Vector2(695, -4149)
+scale = Vector2(1.490625, 3.6055558)
+texture = ExtResource("2_1ap6j")
+centered = false
+offset = Vector2(0, 1152)
+
+[node name="MeioAzul" type="Sprite2D" parent="." unique_id=609487158]
+position = Vector2(-25, -4153.5527)
+scale = Vector2(1.9640625, 3.6077716)
+texture = ExtResource("3_8c340")
+centered = false
+offset = Vector2(0, 1152)
+
+[node name="MeioAzul2" type="Sprite2D" parent="." unique_id=1135205942]
+position = Vector2(564, -4171.759)
+scale = Vector2(1.8968748, 3.6244428)
+texture = ExtResource("3_8c340")
+centered = false
+offset = Vector2(0, 1152)
+
+[node name="MeioPreto" type="Sprite2D" parent="." unique_id=1732592654]
+position = Vector2(583, -4156.045)
+scale = Vector2(1.81875, 3.6088922)
+texture = ExtResource("4_45nkh")
+centered = false
+offset = Vector2(0, 1152)
+
+[node name="MeioPreto2" type="Sprite2D" parent="." unique_id=1851598520]
+position = Vector2(-18.999998, 2)
+scale = Vector2(2.10625, 3.6277778)
+texture = ExtResource("4_45nkh")
+centered = false
+
+[node name="Chao" type="Sprite2D" parent="." unique_id=767694049]
+position = Vector2(-20, -2548.9995)
+scale = Vector2(1.9312496, 2.6718745)
+texture = ExtResource("3_qn35j")
+centered = false
+offset = Vector2(0, 1152)
+
+[node name="Chao2" type="Sprite2D" parent="." unique_id=73188261]
+position = Vector2(594, 533)
+scale = Vector2(1.7968751, 2.6406248)
+texture = ExtResource("3_qn35j")
+centered = false
+
+[node name="ChaoFisico" type="StaticBody2D" parent="." unique_id=1252523999]
+
+[node name="CorpoChao" type="CollisionShape2D" parent="ChaoFisico" unique_id=441195247]
+position = Vector2(575.5, 618)
+shape = SubResource("RectangleShape2D_45nkh")
+
+[node name="Personagem" type="CharacterBody2D" parent="." unique_id=103565921]
+script = ExtResource("6_45nkh")
+
+[node name="Corpo" type="CollisionShape2D" parent="Personagem" unique_id=1969586286]
+position = Vector2(93, 506)
+shape = SubResource("CapsuleShape2D_45nkh")
+
+[node name="Imagem" type="AnimatedSprite2D" parent="Personagem" unique_id=2100077606]
+texture_filter = 1
+position = Vector2(85, 528.00006)
+scale = Vector2(5.4166665, 7.166666)
+sprite_frames = SubResource("SpriteFrames_msvki")
+
+[node name="GeradorObstaculos" type="Node2D" parent="." unique_id=1008119328]
+script = ExtResource("8_ysdx3")
+
+[node name="GeradorItem" type="Node2D" parent="." unique_id=911188497]
+script = ExtResource("9_t8pok")
+
+[node name="Status" type="HBoxContainer" parent="." unique_id=1513400749]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Vida" type="Label" parent="Status" unique_id=87739006]
+layout_mode = 2
+theme_override_font_sizes/font_size = 29
+text = "Vidas:5"
+
+[node name="Pontos" type="Label" parent="Status" unique_id=1893462273]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Pontos:0"
